@@ -1,0 +1,90 @@
+===
+
+Custom Workout Planner
+1. Create Workout Plan
+2. View Workout Plans
+3. Update Workout Plan
+4. Delete Workout Plan
+5. Mark Workout Completion
+6. Exit
+Enter your choice: 1
+Enter athlete's name: lahari
+Enter athlete's age: 19
+Enter athlete's goal (e.g., strength, endurance): strength
+How many exercises do you want to add? 3
+Enter exercise 1: push-ups
+Enter exercise 2: squats
+Enter exercise 3: deadlifting
+Workout plan created successfully!
+
+Custom Workout Planner
+1. Create Workout Plan
+2. View Workout Plans
+3. Update Workout Plan
+4. Delete Workout Plan
+5. Mark Workout Completion
+6. Exit
+Enter your choice: 2
+
+Plan 1:
+Workout Plan for lahari:
+1. push-ups
+2. squats
+3. deadlifting
+
+Custom Workout Planner
+1. Create Workout Plan
+2. View Workout Plans
+3. Update Workout Plan
+4. Delete Workout Plan
+5. Mark Workout Completion
+6. Exit
+Enter your choice: 3
+
+Plan 1:
+Workout Plan for lahari:
+1. push-ups
+2. squats
+3. deadlifting
+Select a plan to update (by number): 1
+Updating workout plan...
+How many new exercises do you want to add? 1
+Enter new exercise 1: push-ups
+Workout plan updated!
+
+Custom Workout Planner
+1. Create Workout Plan
+2. View Workout Plans
+3. Update Workout Plan
+4. Delete Workout Plan
+5. Mark Workout Completion
+6. Exit
+Enter your choice: 4
+
+Plan 1:
+Workout Plan for lahari:
+1. push-ups
+Select a plan to delete (by number): 1
+Workout plan deleted.
+
+Custom Workout Planner
+1. Create Workout Plan
+2. View Workout Plans
+3. Update Workout Plan
+4. Delete Workout Plan
+5. Mark Workout Completion
+6. Exit
+Enter your choice: 5
+No workout plans available.
+Select a plan to mark as complete (by number): 1
+Invalid selection!
+
+Custom Workout Planner
+1. Create Workout Plan
+2. View Workout Plans
+3. Update Workout Plan
+4. Delete Workout Plan
+5. Mark Workout Completion
+6. Exit
+Enter your choice: 6
+Exiting...
