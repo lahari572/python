@@ -1,0 +1,120 @@
+# Define classes for Workout Plan and Athlete
+
+class Athlete:
+    def __init__(self, name, age, goal):
+        self.name = name
+        self.age = age
+        self.goal = goal
+
+class WorkoutPlan:
+    def __init__(self, athlete, exercises):
+        self.athlete = athlete
+        self.exercises = exercises
+        self.completed = False
+
+    def display_plan(self):
+        print(f"Workout Plan for {self.athlete.name}:")
+        for i, exercise in enumerate(self.exercises, 1):
+            print(f"{i}. {exercise}")
+
+    def mark_complete(self):
+        self.completed = True
+        print(f"{self.athlete.name}'s workout plan marked as complete!")
+
+class CustomWorkoutPlanner:
+    def __init__(self):
+        self.workout_plans = []
+
+    def create_workout_plan(self, athlete):
+        exercises = []
+        num_exercises = int(input("How many exercises do you want to add? "))
+        for i in range(num_exercises):
+            exercise = input(f"Enter exercise {i + 1}: ")
+            exercises.append(exercise)
+
+        new_plan = WorkoutPlan(athlete, exercises)
+        self.workout_plans.append(new_plan)
+        print("Workout plan created successfully!")
+
+    def view_workout_plans(self):
+        if not self.workout_plans:
+            print("No workout plans available.")
+        else:
+            for i, plan in enumerate(self.workout_plans, 1):
+                print(f"\nPlan {i}:")
+                plan.display_plan()
+
+    def update_workout_plan(self):
+        self.view_workout_plans()
+        plan_index = int(input("Select a plan to update (by number): ")) - 1
+        if 0 <= plan_index < len(self.workout_plans):
+            plan = self.workout_plans[plan_index]
+            print("Updating workout plan...")
+            plan.exercises.clear()
+            num_exercises = int(input("How many new exercises do you want to add? "))
+            for i in range(num_exercises):
+                exercise = input(f"Enter new exercise {i + 1}: ")
+                plan.exercises.append(exercise)
+            print("Workout plan updated!")
+        else:
+            print("Invalid selection!")
+
+    def delete_workout_plan(self):
+        self.view_workout_plans()
+        plan_index = int(input("Select a plan to delete (by number): ")) - 1
+        if 0 <= plan_index < len(self.workout_plans):
+            del self.workout_plans[plan_index]
+            print("Workout plan deleted.")
+        else:
+            print("Invalid selection!")
+
+    def mark_completion(self):
+        self.view_workout_plans()
+        plan_index = int(input("Select a plan to mark as complete (by number): ")) - 1
+        if 0 <= plan_index < len(self.workout_plans):
+            self.workout_plans[plan_index].mark_complete()
+        else:
+            print("Invalid selection!")
+
+# Main flow for the workout planner
+def main():
+    planner = CustomWorkoutPlanner()
+    while True:
+        print("\nCustom Workout Planner")
+        print("1. Create Workout Plan")
+        print("2. View Workout Plans")
+        print("3. Update Workout Plan")
+        print("4. Delete Workout Plan")
+        print("5. Mark Workout Completion")
+        print("6. Exit")
+        
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            name = input("Enter athlete's name: ")
+            age = input("Enter athlete's age: ")
+            goal = input("Enter athlete's goal (e.g., strength, endurance): ")
+            athlete = Athlete(name, age, goal)
+            planner.create_workout_plan(athlete)
+
+        elif choice == '2':
+            planner.view_workout_plans()
+
+        elif choice == '3':
+            planner.update_workout_plan()
+
+        elif choice == '4':
+            planner.delete_workout_plan()
+
+        elif choice == '5':
+            planner.mark_completion()
+
+        elif choice == '6':
+            print("Exiting...")
+            break
+
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
